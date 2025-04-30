@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Join The Petition</title>
+  <link rel="stylesheet" href="./style.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gidole&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<h1 class="subpage-heading">Join The Petition</h1>
+
+  <form onsubmit="return validateRequest()" action="/process" method="post">
+    <fieldset>
+      <label>Name: </label><input type="text" name="name" required/>
+      <label>Email Address: </label><input type="email" name="email" required/><br><br>
+      <label>Comments: </label><br>
+      <textarea name="comments" style="width: 80%; height: 200px;" required></textarea>
+    </fieldset>
+
+    <br>
+    
+    <button type="submit">Join</button>
+
+  </form>
+
+	<hr>
+
+  <a href="/" class="home-link">HOME</a>
+
+  <script>    
+    function validateRequest() {
+      return window.confirm("Are you sure you want to submit your petition?\nYou will not be able to change your information once submitted.");
+    }
+  </script>
+  
+</body>
+
+</html>

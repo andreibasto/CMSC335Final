@@ -1,0 +1,279 @@
+:root {
+  --dark-blue: #414C6B;
+  --blue: #1E80C1;
+  --blue-translucent: #1E80CA7F;
+  --blue-translucent-2: #1E80CA3F;
+  --teal: #5BAEB7;
+  --light-blue: #A5DEF2;
+  --white: #ffffff;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Gidole", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--dark-blue);
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, var(--blue) 2px, rgba(0, 0, 0, 0) 2px);
+  overflow-x: hidden;
+}
+
+.header-container {
+  width: 80%;
+  margin: 75px auto;
+}
+
+.petition-link {
+  display: block;
+  font-size: 36px;
+  padding: 10px;
+  text-align: center;
+  margin: 25px auto;
+  width: 300px;
+  background-color: var(--teal);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.petition-link:hover {
+  text-decoration: underline;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+}
+
+.see-petition-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.see-petition {
+  color: white;
+  font-size: 18px;
+}
+
+h1 {
+  color: white;
+  font-size: 96px;
+  text-align: center;
+  width: 100%;
+  font-weight: bolder;
+  margin: 0;
+}
+
+h2 {
+  color: var(--light-blue);
+  text-align: center;
+  margin: 0 auto;
+  font-size: 48px;
+}
+
+.movie-card-container {
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  padding: 25px;
+  flex-wrap: wrap;
+  margin: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 200px;
+}
+
+.movie-card {
+  background-color: var(--blue-translucent);
+  border-radius: 25px;
+  width: 650px;
+  padding: 25px;
+  text-decoration: none;
+  position: relative;
+  height: 300px;
+}
+
+.movie-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 10px 20px rgba(0,0,0,0.23);
+}
+
+.movie-header {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.movie-title {
+  font-size: 48px;
+  margin: 0;
+  color: var(--teal);
+}
+
+.movie-year {
+  flex: 1;
+  font-size: 24px;
+  color: var(--light-blue);
+  margin: 0;
+  vertical-align: text-top;
+}
+
+.movie-description {
+  color: white;
+  font-size: 24px;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.themes {
+  font-size: 36px;
+  text-align: right;
+  width: 100%;
+  color: var(--teal);
+  margin: 0px;
+}
+
+.themes-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  gap: 25px;
+  margin-left: 75px;
+}
+
+.theme-name {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.theme-name:hover {
+  text-decoration: underline;
+}
+
+.circle-container {
+  position: relative;
+  right: 125px;
+  bottom: 150px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 5px solid var(--blue);
+}
+
+.movie-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+} 
+
+form {
+  width: 80%;
+  margin: 25px auto;
+  border-radius: 25px;
+  padding: 25px;
+}
+
+fieldset {
+  border-radius: 25px;
+  border: 2px solid var(--teal);
+  padding: 25px;
+  box-shadow: 0 10px 20px var(--teal), 0 0px 40px var(--teal);
+  background-color: var(--blue-translucent-2);
+}
+
+label {
+  font-size: 24px;
+  color: var(--light-blue);
+}
+
+input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid var(--light-blue);
+  margin-right: 50px;
+  width: 200px;
+  color: white;
+  font-size: 20px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--white);
+}
+
+textarea {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid var(--teal);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: var(--teal);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  margin-right: 10px;
+  margin-top: 25px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.subpage-heading {
+  margin-top: 50px;
+}
+
+hr {
+  width: 80%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.home-link {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  color: white;
+  margin-top: 25px;
+}
+
+table {
+  margin: 50px auto;
+  font-size: 24px;
+  color: white;
+  border: 2px solid var(--light-blue);
+  border-radius: 10px;
+}
+
+td {
+  padding: 10px;
+}
+.italic {
+  font-style: italic;
+}
