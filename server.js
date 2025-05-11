@@ -19,6 +19,26 @@ app.get("/join", (request, response) => {
   response.render("join");
 });
 
+app.get("/some-like-it-hot", (request, response) => { 
+  response.render("some");
+});
+
+app.get("/the-apartment", (request, response) => { 
+  response.render("apartment");
+});
+
+app.get("/ace-in-the-hole", (request, response) => { 
+  response.render("ace");
+});
+
+app.get("/the-lost-weekend", (request, response) => { 
+  response.render("weekend");
+});
+
+app.get("/sunset-boulevard", (request, response) => { 
+  response.render("sunset");
+});
+
 app.post("/process", express.urlencoded({ extended: true }), async (request, response) => { 
 
   await addPetition(request.body);
