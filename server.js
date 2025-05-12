@@ -1,5 +1,6 @@
 const express = require("express"); 
 const path = require('path');
+const fetch = require("node-fetch");
 
 const PORT = 3000;
 
@@ -157,3 +158,31 @@ async function retrievePetitionList() {
 
   return result;
 }
+
+// API Requirement
+app.get("/api/filmography", async (req, res) => {
+  const personId = 7212;
+  const apiKey = process.env.TMDB_KEY;
+  const url = `https://api.themoviedb.org/3/person/${personId}/movie_credits?api_key=${apiKey}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const directed = data.crew
+      .filter(f => f.job === "Director")
+      .map(film => ({
+        title: film.title,
+        year: film.release_date ? film.release_date.slice(0, 4) : "N/A",
+        poster: film.poster_path ? `https://image.tmdb.org/t/p/w342${film.poster_path}` : null,
+      }))
+      .sort((a, b) => a.year.localeCompare(b.year));
+
+    res.json(directed);
+  } catch (err) {
+    console.error("TMDb fetch error:", err);
+    res.status(500).json({ error: "Failed to fetch filmography." });
+  }
+});
+
+

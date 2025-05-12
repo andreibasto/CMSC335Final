@@ -13,14 +13,29 @@
 <body>
 	<section class="header-container">
 		<h1>Filmography</h1>
-
-
+		<div id="filmList"></div>
 	</section>
-
 	
 	<hr>
 
   <a href="/" class="home-link">HOME</a>
+
+  <script>
+	fetch('/api/filmography')
+		.then(response => response.json())
+  		.then(films => {
+			let result = "";
+			films.forEach(film => {
+				result += `<h2>${film.title} (${film.year})</h2><br><img src="${film.poster}" alt="${film.title} poster" width="200"><br><br>`;
+			});
+			document.getElementById('filmList').innerHTML = result;
+
+		})
+  		.catch(error => {
+			console.error(`Reporting error: ${error}`);
+			document.getElementById('filmList').textContent = "Failed to load films.";
+		});
+  </script>
 
 </body>
 
