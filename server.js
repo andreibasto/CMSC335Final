@@ -19,6 +19,10 @@ app.get("/join", (request, response) => {
   response.render("join");
 });
 
+app.get("/filmography", (request, response) => { 
+  response.render("filmography");
+});
+
 app.get("/some-like-it-hot", (request, response) => { 
   response.render("some");
 });
