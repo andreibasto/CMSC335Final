@@ -3,6 +3,8 @@ const path = require('path');
 
 const PORT = 3000;
 
+const pagesRouter = require('./routes');
+
 const app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -11,37 +13,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public/templates'));
 
-app.get("/", (request, response) => { // Main page
-  response.render("index");
-});
-
-app.get("/join", (request, response) => { 
-  response.render("join");
-});
-
-app.get("/filmography", (request, response) => { 
-  response.render("filmography");
-});
-
-app.get("/some-like-it-hot", (request, response) => { 
-  response.render("some");
-});
-
-app.get("/the-apartment", (request, response) => { 
-  response.render("apartment");
-});
-
-app.get("/ace-in-the-hole", (request, response) => { 
-  response.render("ace");
-});
-
-app.get("/the-lost-weekend", (request, response) => { 
-  response.render("weekend");
-});
-
-app.get("/sunset-boulevard", (request, response) => { 
-  response.render("sunset");
-});
+app.use('/', pagesRouter);
 
 app.post("/process", express.urlencoded({ extended: true }), async (request, response) => { 
 
